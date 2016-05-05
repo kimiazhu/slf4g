@@ -30,6 +30,24 @@ var (
 	Global Loggers
 )
 
+type DefaultLogger struct {
+	Filter IFilter
+	Lvl Level
+	Appenders []IAppender
+}
+
+func (l *DefaultLogger) Filter() IFilter {
+	return l.Filter
+}
+
+func (l *DefaultLogger) Level() Level {
+	return l.Lvl
+}
+
+func (l *DefaultLogger) Appenders() []IAppender {
+	return l.Appenders
+}
+
 func (loggers Loggers) findValid(lvl Level) Loggers {
 	valid := make(Loggers, 0)
 	for i, _ := range loggers {
