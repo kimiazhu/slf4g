@@ -15,12 +15,17 @@ type Level int
 const (
 	FINEST Level = iota
 	FINE
-	DEBUG
 	TRACE
+	DEBUG
 	INFO
 	WARNING
 	ERROR
-	FATAL
+	CRITICAL
+)
+
+// Logging level strings
+var (
+	levelStrings = [...]string{"FNST", "FINE", "TRAC", "DEBG", "INFO", "WARN", "EROR", "CRIT"}
 )
 
 // A Record contains all of the pertinent information for each message
