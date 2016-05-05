@@ -10,8 +10,12 @@ type IAppender interface {
 
 	DoAppend(record *Record)
 
-	//Roll()
-
-	//NeedRoll()
 }
 
+type ConsoleAppender struct {
+
+}
+
+func (appender *ConsoleAppender) DoAppend(record *Record) {
+
+}
